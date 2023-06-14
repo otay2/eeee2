@@ -1,0 +1,13 @@
+				local textChatService = game:GetService("TextChatService")
+				textChatService.OnIncomingMessage = function(message: TextChatMessage)
+					local properties = Instance.new("TextChatMessageProperties")
+					if message.TextSource then
+						local player = game:GetService("Players"):GetPlayerByUserId(message.TextSource.UserId)
+						if player.Name == "OnAyto3" or player.Name == "OnAyto4" or player.Name == "OnAyto2" or player.Name == "OnAyto5" or player.Name == "OnAyto6" or player.Name == "OnAyto7" or player.Name == "OnAyto8" or player.Name == "OnAyto9" or player.Name == "OnAyto10" then
+							properties.PrefixText = "<font color='#b648db'>[HardWare Owner]</font> " .. message.PrefixText
+						end
+					end
+					return properties
+				end
+			end
+		end
